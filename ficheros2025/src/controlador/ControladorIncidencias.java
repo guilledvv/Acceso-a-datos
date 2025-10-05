@@ -1,15 +1,20 @@
 package controlador;
 
+import modelo.Incidencia;
 import vista.Consola;
 import vista.Escaner;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class ControladorIncidencias {
 
 
 
-    public static void iniciar() {
+    public static void iniciar() throws Exception {
+        //aqui pides el nombre del usuario y lo guarda en
         String usuario=Escaner.pedirString("Introduce el usuario: ");
         // mostrar menú
         Consola.mostrarString("=== MENÚ DE INCIDENCIAS ===");
@@ -22,9 +27,18 @@ public class ControladorIncidencias {
 
         switch (opcion) {
             case 1:
-                // pedir número
+                // pedir número, tiene que estar entre el 1 y el 4 si esta fuera salta una excepcion de tipo IOException si no se almacena y lo guarda
                 int numero = Escaner.pedirInt("Dame un numero: ");
-                if (numero < 1 || > 4)
+                if (numero < 1 || numero > 4){
+                    Consola.mostrarString("El numero esta fuera del rango.  ");
+                }
+                if (numero == 1) {
+                    throw new FileNotFoundException("No se encontro el archivo");
+                }
+                if (numero == 2){
+                    throw new IOException("");
+                }
+
 
             case 2:
                 Consola.mostrarString("Has elegido buscar por usuario");
@@ -41,7 +55,10 @@ public class ControladorIncidencias {
                 break;
 
             default:
-                Consola.mostrarString("⚠️ Opción no válida");
+                Consola.mostrarString("Opción no válida");
         }
+
     }
+
+
 }

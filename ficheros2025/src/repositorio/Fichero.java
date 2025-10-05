@@ -71,11 +71,7 @@ public class Fichero {
     //metodos para todas las funcionalidades
     public ArrayList<String> leerFichero(String dato){
 
-
-
-
         return null;
-
     }
 
 

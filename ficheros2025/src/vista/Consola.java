@@ -39,7 +39,7 @@ public class Consola {
                 numero = Integer.parseInt(respuesta);
                 valido = true;
             } catch (NumberFormatException e) {
-                mostrarString("⚠️ Error: introduce un número válido.");
+                mostrarString("Error: introduce un número válido.");
             }
         }
 

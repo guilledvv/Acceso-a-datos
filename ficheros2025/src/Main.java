@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ControladorIncidencias.iniciar();
         //generar un metodo para cualquier excepcion
         //en el switch try and catch con la funcion de generar la exception y la excepcion q se genere la meta al fichero

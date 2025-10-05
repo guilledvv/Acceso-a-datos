@@ -4,10 +4,10 @@ import java.time.LocalTime;
 
 
 public class Incidencia {
-        private LocalDate fecha;
-        private LocalTime hora;
-        private String excepcion;
-        private String usuario;
+        private final LocalDate fecha;
+        private final LocalTime hora;
+        private final String excepcion;
+        private final String usuario;
 
         public Incidencia(LocalDate fecha, LocalTime hora, String excepcion, String usuario) {
                 this.fecha = fecha;
