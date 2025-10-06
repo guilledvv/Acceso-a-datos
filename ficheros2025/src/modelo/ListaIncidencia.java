@@ -19,12 +19,5 @@ public class ListaIncidencia {
         return new ArrayList<>(lista); // devuelve copia para proteger la lista original
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (Incidencia i : lista) {
-            sb.append(i.toString()).append("\n");
-        }
-        return sb.toString();
-    }
+
 }

@@ -30,18 +30,9 @@ public class Consola {
      * Pide un número entero al usuario usando Escaner.
      */
     public static int pedirEntero(String mensaje) {
-        int numero = -1;
+        int numero = 1;
         boolean valido = false;
 
-        while (!valido) {
-            try {
-                String respuesta = Escaner.pedirString(mensaje);
-                numero = Integer.parseInt(respuesta);
-                valido = true;
-            } catch (NumberFormatException e) {
-                mostrarString("Error: introduce un número válido.");
-            }
-        }
 
         return numero;
     }
