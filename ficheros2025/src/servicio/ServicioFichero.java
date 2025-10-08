@@ -16,7 +16,7 @@ public class ServicioFichero {
     String linea = fecha + ";" + hora + ";" + excepcion + ";" + usuario + System.lineSeparator();
     try {
         Fichero fichero = new Fichero("datos/incidencias.txt"); // Crea una instancia con la ruta correcta
-        fichero.addDato(linea); // Llama al método de instancia
+        fichero.addDato(linea); // Llama al metodo de instancia
     } catch (IOException e) {
         System.out.println("Error al guardar la incidencia: " + e.getMessage());
     }
