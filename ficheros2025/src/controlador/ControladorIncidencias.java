@@ -3,6 +3,10 @@ package controlador;
 import vista.Consola;
 import vista.Escaner;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import modelo.Incidencia;
+import servicio.ServicioFichero;
 
 public class ControladorIncidencias {
 
@@ -40,11 +44,40 @@ public class ControladorIncidencias {
                 break;
 
             case 2:
-                Consola.mostrarString("Has elegido buscar por usuario");
+                String usuarioBuscar = Escaner.pedirString("Introduce el usuario a buscar: ");
+                // Aquí debes cargar la lista de incidencias desde el fichero
+                ArrayList<Incidencia> listaIncidenciasUsuario = ServicioFichero.leerIncidencias();
+                ArrayList<String> resultadoUsuario = ServicioFichero.buscarPorUsuario(usuarioBuscar, listaIncidenciasUsuario);
+                if (resultadoUsuario.isEmpty()) {
+                    Consola.mostrarString("No se encontraron incidencias para ese usuario.");
+                } else {
+                    Consola.mostrarString("Incidencias encontradas:");
+                    for (String inc : resultadoUsuario) {
+                        Consola.mostrarString(inc);
+                    }
+                }
                 break;
 
             case 3:
-                Consola.mostrarString("Has elegido buscar por fecha");
+                String fechaIniStr = Escaner.pedirString("Introduce la fecha de inicio (YYYY-MM-DD): ");
+                String fechaFinStr = Escaner.pedirString("Introduce la fecha de fin (YYYY-MM-DD): ");
+                try {
+                    LocalDate fechaIni = LocalDate.parse(fechaIniStr);
+                    LocalDate fechaFin = LocalDate.parse(fechaFinStr);
+                    // Cargar la lista de incidencias desde el fichero
+                    ArrayList<Incidencia> listaIncidenciasFecha = ServicioFichero.leerIncidencias();
+                    ArrayList<String> resultadoFecha = ServicioFichero.buscarPorFecha(fechaIni, fechaFin, listaIncidenciasFecha);
+                    if (resultadoFecha.isEmpty()) {
+                        Consola.mostrarString("No se encontraron incidencias en ese rango de fechas.");
+                    } else {
+                        Consola.mostrarString("Incidencias encontradas:");
+                        for (String inc : resultadoFecha) {
+                            Consola.mostrarString(inc);
+                        }
+                    }
+                } catch (Exception e) {
+                    Consola.mostrarString("Formato de fecha incorrecto.");
+                }
                 break;
 
             case 0:

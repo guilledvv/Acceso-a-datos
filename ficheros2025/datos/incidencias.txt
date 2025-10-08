@@ -3,3 +3,4 @@
 2025-08-18;16:01:44;excepción test 3;usuario1
 2025-10-08;21:47:54.344867400;Salta la IO excepción;guillermo
 2025-10-08;21:49:08.044027500;Exception;guille
+2025-10-08;22:25:13.292143700;FileNotFoundException;guille
