@@ -16,5 +16,8 @@ public class Main {
 
         System.out.println(Arrays.toString(datos));
         */
+
+        //el contrlador coge los metodos del servicio y el tranforma los objetos a texto
+        //
     }
 }

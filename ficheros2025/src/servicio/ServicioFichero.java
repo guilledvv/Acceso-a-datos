@@ -7,21 +7,21 @@ import repositorio.Fichero;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
+//pasa a texo el objeto incidencia
 public class ServicioFichero {
 
-    //arreglar todo esto
+    //arreglar esto
 
-    public static void guardar(String excepcion, String usuario, LocalDate fecha,LocalTime hora){
 
-        Incidencia miIncidencia=new Incidencia(fecha, hora, usuario, excepcion);
+    public static void guardarIncidencia(LocalDate fecha,LocalTime hora,String excepcion, String usuario){
+        Incidencia miIncidencia=new Incidencia(fecha, hora,excepcion, usuario);
         Fichero archivo=new Fichero("datos/incidencia.txt");
         archivo.addDato(miIncidencia.toString());
     }
+    //public static void leerIncidencia(LocalDate fecha,LocalTime hora,String excepcion, String usuario){
+    //
+    // }
 
-
-    public static void guardar(Incidencia miIncidencia){
-        Fichero archivo=new Fichero("datos/incidencia.txt");
-        archivo.addDato(archivo.toString());
-
-    }
+   //public static void
 }

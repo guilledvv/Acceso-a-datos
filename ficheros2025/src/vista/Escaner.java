@@ -3,17 +3,20 @@ package vista;
 import java.util.Scanner;
 
 public class Escaner {
-    private static Scanner sc = new Scanner(System.in);
 
-    // Pedir String
-    public static String pedirString(String pregunta) {
-        Consola.mostrarString(pregunta);
+    private static final Scanner sc = new Scanner(System.in);
+
+    // Pide un texto al usuario
+    public static String pedirString(String mensaje) {
+        System.out.print(mensaje + " ");
         return sc.nextLine();
     }
 
-    // Pedir int
-    public static int pedirInt(String pregunta) {
-        Consola.mostrarString(pregunta);
-        return Integer.parseInt(sc.nextLine());
+    // Pide un número entero al usuario
+    public static int pedirInt(String mensaje) {
+        System.out.print(mensaje + " ");
+        int numero = sc.nextInt();
+        sc.nextLine(); // limpiar el salto de línea
+        return numero;
     }
 }

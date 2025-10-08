@@ -32,21 +32,6 @@ public class Incidencia {
                 return usuario;
         }
 
-        public void setFecha(LocalDate fecha) {
-                this.fecha = fecha;
-        }
-
-        public void setHora(LocalTime hora) {
-                this.hora = hora;
-        }
-
-        public void setExcepcion(String excepcion) {
-                this.excepcion = excepcion;
-        }
-
-        public void setUsuario(String usuario) {
-                this.usuario = usuario;
-        }
 
         @Override
         public String toString() {

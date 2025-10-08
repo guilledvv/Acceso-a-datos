@@ -1,11 +1,6 @@
 package repositorio;
 
-import modelo.Incidencia;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -32,20 +27,29 @@ public class Fichero {
                 '}';
     }
 
-    //metodos para todas las funcionalidades
-    public String addDato(String dato){
 
+
+    public static void addDato(String dato) throws IOException{
+        FileWriter fichero = null;
+        String incidencia;
         //añadir la linea al fichero
-        return "";
 
-    }
-    //metodos para todas las funcionalidades
-    public String buscarDato(String dato,int coulmna){
+        try{
+            fichero= new FileWriter("datos/incidencia.txt", true);
+            fichero.write(dato);
+        }catch (IOException e){
+            System.out.println(" No se añadio.");
+        }finally {
+            fichero.close();
+        }
 
-        return "";
 
-    }
-    //metodos para todas las funcionalidades
+
+        }
+
+
+
+
     public String buscarDato(LocalDate fechaInicial,LocalDate fechaFinal){
 
         FileReader fichero=null;
@@ -62,13 +66,10 @@ public class Fichero {
             System.out.println("Error inesperado");
             e.printStackTrace();
         }
-
-
         return "";
-
     }
 
-    //metodos para todas las funcionalidades
+
     public ArrayList<String> leerFichero(String dato){
 
         return null;

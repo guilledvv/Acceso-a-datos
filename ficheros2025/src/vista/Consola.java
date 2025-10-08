@@ -10,14 +10,6 @@ public class Consola {
     /**
      * Muestra el menú principal de la aplicación.
      */
-    public static void mostrarMenu() {
-        System.out.println("\n=== SISTEMA DE CONTROL DE INCIDENCIAS ===");
-        System.out.println("1. Registrar incidencia");
-        System.out.println("2. Listar incidencias");
-        System.out.println("3. Buscar incidencia por ID");
-        System.out.println("4. Resolver incidencia");
-        System.out.println("0. Salir");
-    }
 
     /**
      * Muestra un texto en consola.
@@ -30,11 +22,7 @@ public class Consola {
      * Pide un número entero al usuario usando Escaner.
      */
     public static int pedirEntero(String mensaje) {
-        int numero = 1;
-        boolean valido = false;
-
-
-        return numero;
+        return Escaner.pedirInt(mensaje);
     }
 
     /**
