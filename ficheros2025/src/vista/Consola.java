@@ -7,27 +7,18 @@ package vista;
  */
 public class Consola {
 
-    /**
-     * Muestra el menú principal de la aplicación.
-     */
-
-    /**
-     * Muestra un texto en consola.
-     */
+     //Muestra un texto en consola
     public static void mostrarString(String mensaje) {
         System.out.println(mensaje);
     }
 
-    /**
-     * Pide un número entero al usuario usando Escaner.
-     */
+    //Pide un número entero al usuario usando Escaner
+
     public static int pedirEntero(String mensaje) {
         return Escaner.pedirInt(mensaje);
     }
 
-    /**
-     * Pide un texto al usuario usando Escaner.
-     */
+    //Pide un texto al usuario usando Escaner
     public static String pedirTexto(String mensaje) {
         return Escaner.pedirString(mensaje);
     }

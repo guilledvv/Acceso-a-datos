@@ -25,8 +25,6 @@ public class Fichero {
                 '}';
     }
 
-
-
     public void addDato(String dato) throws IOException {
         try (FileWriter fichero = new FileWriter(ruta, true)) {
             fichero.write(dato);
@@ -36,19 +34,16 @@ public class Fichero {
         }
     }
 
+    private static void escribirFichero(String dato){
+        FileWriter fichero = null;
 
+        try{
+            fichero= new FileWriter("datos/incidencias.txt", true);
+            fichero.write(dato);
+        }catch (IOException e){
 
-
-   /* public String buscarDato(LocalDate fechaInicial, LocalDate fechaFinal) {
-        try (BufferedReader lector = new BufferedReader(new FileReader(ruta))) {
-            // Aquí puedes implementar la lógica de búsqueda por fecha si lo necesitas
-        } catch (FileNotFoundException e) {
-            System.out.println("No encuentro la ruta");
-        } catch (Exception e) {
-            System.out.println("Error inesperado");
         }
-        return "";
-    }*/
+    }
 
 
 
